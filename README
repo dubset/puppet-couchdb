@@ -14,7 +14,8 @@ Set up a standard CouchDB service :
 Set up an alternate CouchDB service with a different service name :
 
     couchdb {'couchdb-feat':
-        port    => 5985,
+        port         => 5985,
+        bind_address => '0.0.0.0',
     }
 
 (This only works with a modified couchdb package that allows symlinking
