@@ -15,6 +15,7 @@
 #
 #   couchdb::config { 'couchdb-feat':
 #     port          => 5985,
+#     bind_address  => "0.0.0.0",
 #     query_servers => [
 #       "python = /usr/bin/feat-couchpy",
 #     ]
@@ -24,7 +25,7 @@
 #
 # Thomas Vander Stichele <thomas (at) apestaart (dot) org>
 
-define couchdb::config ($port=5984, $bind_address="0.0.0.0", $query_servers=[]) {
+define couchdb::config ($port=5984, $bind_address="127.0.0.1", $query_servers=[]) {
     $owner    = 'couchdb'
     $group    = 'root'
     $mode     = '0644'
